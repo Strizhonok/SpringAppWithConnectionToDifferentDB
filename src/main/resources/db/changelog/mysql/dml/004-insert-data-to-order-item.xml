@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="004-insert-data-to-order-item" author="IGuliaeva">
+        <sql>
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+                VALUES
+                (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'iZhukova'),
+                '0292-392038',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Core MEDLINE'),
+                '01.02.2021',
+                2,
+                250,
+                500
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'iZhukova'),
+                '0292-392038',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Critical Care Medicine'),
+                '01.02.2021',
+                1,
+                1000,
+                1000
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'iAnatoliev'),
+                '0277-5764',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Alert'),
+                '06.08.2022',
+                10,
+                584,
+                5840
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'iAnatoliev'),
+                '0277-5764',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Core MEDLINE'),
+                '06.08.2022',
+                1,
+                250,
+                250
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'iAnatoliev'),
+                '0277-5764',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Index Abstract Directory'),
+                '06.08.2022',
+                2,
+                250,
+                500
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'aShurupov'),
+                '8759-45639',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Core MEDLINE'),
+                '24.12.2020',
+                2,
+                700,
+                1400
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'nSemenov'),
+                '7546-48765',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'EBook-Electronic Library of Art'),
+                '11.01.2022',
+                8,
+                10,
+                80
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'kNickolayeva'),
+                '2543-8756',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'AGRICOLA'),
+                '14.02.2022',
+                20,
+                250,
+                5000
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'kNickolayeva'),
+                '2543-8756',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Curriculum Reference Series: US History Collection'),
+                '14.02.2022',
+                6,
+                70,
+                420
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'eTestov'),
+                '6536-98658',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Alert'),
+                '24.11.2022',
+                20,
+                250,
+                5000
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'eMalachova'),
+                '231-998798',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'AGRICOLA'),
+                '12.02.2020',
+                1,
+                232235,
+                232235
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'iZhukova'),
+                '0567-35424',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Critical Care Medicine'),
+                '05.12.2021',
+                1,
+                5645,
+                5645
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'iZhukova'),
+                '0567-35424',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Junior High Magazine Abstracts'),
+                '05.12.2021',
+                2,
+                10000,
+                20000
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'aMelnikova'),
+                '6536-8758585',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Junior High Magazine Abstracts'),
+                '22.02.2020',
+                6,
+                1000,
+                6000
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'aMelnikova'),
+                '6536-8758585',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Ethnic Newswatch'),
+                '22.02.2020',
+                10,
+                50,
+                500
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'fIvanov'),
+                '758-876989',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Index Abstract Directory'),
+                '25.04.2020',
+                6,
+                700,
+                4200
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'fIvanov'),
+                '758-876989',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Ethnic Newswatch'),
+                '25.04.2020',
+                1,
+                876,
+                876
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'fIvanov'),
+                '758-876989',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Curriculum Reference Series: US History Collection'),
+                '25.04.2020',
+                2,
+                2500,
+                5000
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'aGovorova'),
+                '764-3969785',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Junior High Magazine Abstracts'),
+                '25.05.2021',
+                1,
+                8568,
+                8568
+            );
+
+            INSERT INTO test.order_item
+            (
+                USER_ID,
+                ORDER_NUM,
+                OFFERING_ID,
+                DATE,
+                COUNT,
+                PRICE,
+                SUM
+            )
+            VALUES
+            (
+                (SELECT U.ID FROM test.user U WHERE U.LOGIN = 'aGovorova'),
+                '764-3969785',
+                (SELECT O.ID FROM test.offering O WHERE O.NAME = 'Index Abstract Directory'),
+                '25.05.2021',
+                1,
+                56567,
+                56567
+            );
+        </sql>
+    </changeSet>
+</databaseChangeLog>

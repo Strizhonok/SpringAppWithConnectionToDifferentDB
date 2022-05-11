@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="003-create-table-order" author="IGuliaeva">
+
+        <preConditions>
+            <not>
+                <tableExists schemaName="sales" tableName="order"/>
+            </not>
+        </preConditions>
+
+        <comment>Create sales.order</comment>
+
+        <createTable tablespace="pg_default" schemaName="sales" tableName="order">
+            <column name="id" type="INT" generationType="ALWAYS" autoIncrement="true">
+                <constraints primaryKey="true" unique="true"/>
+            </column>
+            <column name="user_id" type="INT" >
+                <constraints nullable="false"/>
+            </column>
+            <column name="num" type="varchar(100)" >
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="date" type="date" >
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <rollback>
+            <dropTable schemaName="sales" tableName="order"/>
+        </rollback>
+
+    </changeSet>
+
+</databaseChangeLog>

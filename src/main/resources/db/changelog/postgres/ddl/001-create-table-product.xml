@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="001-create-table-product" author="IGuliaeva">
+
+        <preConditions>
+            <not>
+                <tableExists schemaName="sales" tableName="product"/>
+            </not>
+        </preConditions>
+
+        <comment>Create sales.product</comment>
+
+        <createTable tablespace="pg_default" schemaName="sales" tableName="product">
+            <column name="id" type="INT" generationType="ALWAYS" autoIncrement="true">
+                <constraints primaryKey="true" unique="true"/>
+            </column>
+            <column name="name" type="varchar(100)" >
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="number" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="count" type="number" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <rollback>
+            <dropTable schemaName="sales" tableName="product"/>
+        </rollback>
+
+    </changeSet>
+
+</databaseChangeLog>

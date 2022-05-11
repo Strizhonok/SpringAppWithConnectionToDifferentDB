@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="002-insert-data-to-mySqlUser" author="IGuliaeva">
+        <sql>
+            INSERT INTO test.user (NAME, SECONDNAME, LOGIN, PASSWORD) VALUES ('Irina', 'Zhukova', 'iZhukova', 'testtest');
+            INSERT INTO test.user (NAME, SECONDNAME, LOGIN, PASSWORD) VALUES ('Nikolay', 'Semenov', 'nSemenov', 'rbtdfg');
+            INSERT INTO test.user (NAME, SECONDNAME, LOGIN, PASSWORD) VALUES ('Elena', 'Nikolayeva', 'eNikolayeva', 'sdfaa');
+            INSERT INTO test.user (NAME, SECONDNAME, LOGIN, PASSWORD) VALUES ('Evgenia', 'Malachova', 'eMalachova', 'fgnsdf');
+            INSERT INTO test.user (NAME, SECONDNAME, LOGIN, PASSWORD) VALUES ('Evgeniy', 'Testov', 'eTestov', 'sdgr');
+            INSERT INTO test.user (NAME, SECONDNAME, LOGIN, PASSWORD) VALUES ('Alena', 'Melnikova', 'aMelnikova', 'sdgsd');
+            INSERT INTO test.user (NAME, SECONDNAME, LOGIN, PASSWORD) VALUES ('Igor', 'Anatoliev', 'iAnatoliev', 'vdsdvsd');
+            INSERT INTO test.user (NAME, SECONDNAME, LOGIN, PASSWORD) VALUES ('Aleksey', 'Shurupov', 'aShurupov', 'wewgweg');
+            INSERT INTO test.user (NAME, SECONDNAME, LOGIN, PASSWORD) VALUES ('Fedor', 'Ivanov', 'fIvanov', 'zdbzfdb');
+            INSERT INTO test.user (NAME, SECONDNAME, LOGIN, PASSWORD) VALUES ('Anna', 'Govorova', 'aGovorova', 'zndff');
+            INSERT INTO test.user (NAME, SECONDNAME, LOGIN, PASSWORD) VALUES ('Kseniya', 'Nickolayeva', 'kNickolayeva', 'zdrnr');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

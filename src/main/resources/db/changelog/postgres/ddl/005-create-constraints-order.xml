@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="005-create-constraints-order-fk-order-mySqlUser" author="IGuliaeva">
+
+        <preConditions>
+            <and>
+                <tableExists schemaName="sales" tableName="user"/>
+                <tableExists schemaName="sales" tableName="order"/>
+            </and>
+            <not>
+                <foreignKeyConstraintExists foreignKeyName="fk_order_user"/>
+            </not>
+        </preConditions>
+
+        <addForeignKeyConstraint
+            baseTableSchemaName="sales"
+            baseTableName="order"
+            baseColumnNames="user_id"
+            constraintName="fk_order_user"
+            referencedTableSchemaName="sales"
+            referencedTableName="user"
+            referencedColumnNames="id"/>
+
+    </changeSet>
+
+    <changeSet id="005-create-constraints-order-unx-order-num-mySqlUser-unique" author="IGuliaeva">
+
+        <preConditions>
+            <and>
+                <tableExists schemaName="sales" tableName="order"/>
+            </and>
+        </preConditions>
+
+        <addUniqueConstraint
+            schemaName="sales"
+            tableName="order"
+            columnNames="user_id, num"
+            constraintName="unx_order_num_user_unique"/>
+
+    </changeSet>
+
+</databaseChangeLog>

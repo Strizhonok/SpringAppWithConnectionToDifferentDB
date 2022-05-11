@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="006-create-constraints-order-item-fk-order-item-order" author="IGuliaeva">
+
+        <preConditions>
+            <and>
+                <tableExists schemaName="sales" tableName="order"/>
+                <tableExists schemaName="sales" tableName="order_item"/>
+            </and>
+            <not>
+                <foreignKeyConstraintExists foreignKeyName="fk_order_item_order"/>
+            </not>
+        </preConditions>
+
+        <addForeignKeyConstraint
+            baseTableSchemaName="sales"
+            baseTableName="order_item"
+            baseColumnNames="order_id"
+            constraintName="fk_order_item_order"
+            referencedTableSchemaName="sales"
+            referencedTableName="order"
+            referencedColumnNames="id"/>
+
+    </changeSet>
+
+    <changeSet id="006-create-constraints-order-item-fk-order-item-product" author="IGuliaeva">
+
+        <preConditions>
+            <and>
+                <tableExists schemaName="sales" tableName="product"/>
+                <tableExists schemaName="sales" tableName="order_item"/>
+            </and>
+            <not>
+                <foreignKeyConstraintExists foreignKeyName="fk_order_item_product"/>
+            </not>
+        </preConditions>
+
+        <addForeignKeyConstraint
+            baseTableSchemaName="sales"
+            baseTableName="order_item"
+            baseColumnNames="product_id"
+            constraintName="fk_order_item_product"
+            referencedTableSchemaName="sales"
+            referencedTableName="product"
+            referencedColumnNames="id"/>
+
+    </changeSet>
+
+</databaseChangeLog>

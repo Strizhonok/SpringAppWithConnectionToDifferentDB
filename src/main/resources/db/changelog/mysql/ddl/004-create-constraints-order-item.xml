@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="004-create-constraints-order-item-fk-order-item-mySqlUser" author="IGuliaeva">
+
+        <preConditions>
+            <and>
+                <tableExists schemaName="test" tableName="user"/>
+                <tableExists schemaName="test" tableName="order_item"/>
+            </and>
+            <not>
+                <foreignKeyConstraintExists foreignKeyName="fk_order_item_user"/>
+            </not>
+        </preConditions>
+
+        <addForeignKeyConstraint
+            baseTableSchemaName="test"
+            baseTableName="order_item"
+            baseColumnNames="user_id"
+            constraintName="fk_order_item_user"
+            referencedTableSchemaName="test"
+            referencedTableName="user"
+            referencedColumnNames="id"/>
+
+    </changeSet>
+
+    <changeSet id="004-create-constraints-order-item-fk-order-item-offering" author="IGuliaeva">
+
+        <preConditions>
+            <and>
+                <tableExists schemaName="test" tableName="offering"/>
+                <tableExists schemaName="test" tableName="order_item"/>
+            </and>
+            <not>
+                <foreignKeyConstraintExists foreignKeyName="fk_order_item_offering"/>
+            </not>
+        </preConditions>
+
+        <addForeignKeyConstraint
+            baseTableSchemaName="test"
+            baseTableName="order_item"
+            baseColumnNames="offering_id"
+            constraintName="fk_order_item_offering"
+            referencedTableSchemaName="test"
+            referencedTableName="offering"
+            referencedColumnNames="id"/>
+
+    </changeSet>
+
+</databaseChangeLog>

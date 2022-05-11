@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="001-insert-data-to-offering" author="IGuliaeva">
+        <sql>
+            INSERT INTO test.offering (NAME, PRICE, COUNT) VALUES ('Core MEDLINE', 23.2, 400);
+            INSERT INTO test.offering (NAME, PRICE, COUNT) VALUES ('Critical Care Medicine', 158.67, 2400);
+            INSERT INTO test.offering (NAME, PRICE, COUNT) VALUES ('Curriculum Reference Series: US History Collection', 3544.6, 124);
+            INSERT INTO test.offering (NAME, PRICE, COUNT) VALUES ('Alert', 656, 264);
+            INSERT INTO test.offering (NAME, PRICE, COUNT) VALUES ('EBook-Electronic Library of Art', 176.9, 8764);
+            INSERT INTO test.offering (NAME, PRICE, COUNT) VALUES ('Ethnic Newswatch', 234, 4477);
+            INSERT INTO test.offering (NAME, PRICE, COUNT) VALUES ('Great Athletes of the 20th Century', 2342, 454);
+            INSERT INTO test.offering (NAME, PRICE, COUNT) VALUES ('Index Abstract Directory', 657.7, 473);
+            INSERT INTO test.offering (NAME, PRICE, COUNT) VALUES ('Junior High Magazine Abstracts', 36.7, 236);
+            INSERT INTO test.offering (NAME, PRICE, COUNT) VALUES ('AGRICOLA', 8654.7, 745);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

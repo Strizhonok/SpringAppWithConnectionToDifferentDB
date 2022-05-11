@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: DataMigration
+
+  postgres-data-source:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/test?currentSchema=sales
+    username: postgres
+    password: postgres
+    validation-query: SELECT 1 FROM dual
+    initialization-mode: always
+    schema: classpath:schema/postgres/schema.sql
+    liquibase:
+      change-log: classpath:db/changelog/postgres/db.changelog-master.xml
+      default-schema: sales
+    jpa:
+      database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+      hibernate:
+        ddl-auto: validate
+      show-sql: true
+
+  mysql-data-source:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?currentSchema=test;INIT=create schema if not exists test
+    username: mysql
+    password: mysql
+    validation-query: SELECT 1 FROM dual
+    liquibase:
+      change-log: classpath:db/changelog/mysql/db.changelog-master.xml
+      default-schema: test
+    jpa:
+      database-platform: org.hibernate.dialect.MySQLDialect
+      hibernate:
+        ddl-auto: validate
+      show-sql: true

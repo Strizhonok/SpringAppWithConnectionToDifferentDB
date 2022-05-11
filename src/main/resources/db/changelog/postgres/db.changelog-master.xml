@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <include file="db/changelog/postgres/ddl/001-create-table-product.xml"/>
+    <include file="db/changelog/postgres/ddl/002-create-table-user.xml"/>
+    <include file="db/changelog/postgres/ddl/003-create-table-order.xml"/>
+    <include file="db/changelog/postgres/ddl/004-create-table-order-item.xml"/>
+    <include file="db/changelog/postgres/ddl/005-create-constraints-order.xml"/>
+    <include file="db/changelog/postgres/ddl/006-create-constraints-order-item.xml"/>
+
+</databaseChangeLog>
